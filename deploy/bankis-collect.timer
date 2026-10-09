@@ -1,0 +1,11 @@
+[Unit]
+Description=Collect market data before 08:00 KST briefing
+
+[Timer]
+OnCalendar=*-*-* 07:00:00 Asia/Seoul
+Persistent=true
+AccuracySec=1s
+Unit=bankis-collect.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bankis-scout"
+version = "2.0.0"
+description = "Read-only strategy-neutral Market Intelligence and BankIS Scout research tools"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "numpy>=1.24", "requests>=2.28", "python-dotenv>=1.0", "tzdata>=2024.1"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+bankis-scout = "bankis_scout.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["bankis_scout*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,17 @@
+[Unit]
+Description=KIS equity collection and market briefing
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=bankis
+WorkingDirectory=/opt/bankis
+Environment=TZ=Asia/Seoul
+Environment=BANKIS_HOME=/opt/bankis
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/bankis/.venv/bin/python -m bankis_scout.pipeline --collect
+TimeoutStartSec=3h
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true

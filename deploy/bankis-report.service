@@ -1,0 +1,19 @@
+[Unit]
+Description=Read-only curated market reports
+After=network.target
+
+[Service]
+Type=simple
+User=bankis
+WorkingDirectory=/opt/bankis
+Environment=TZ=Asia/Seoul
+Environment=BANKIS_HOME=/opt/bankis
+ExecStart=/opt/bankis/.venv/bin/python -m bankis_scout.briefing_server
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
