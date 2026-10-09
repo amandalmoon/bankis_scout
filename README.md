@@ -1,4 +1,4 @@
-> 운영 연결 업데이트: KIS 모의 서버에서 현재 주식 마스터 2,769종목과 일봉 242,215개를 수집했습니다. 최근 25거래일 자료 충족은 2,757종목이며, 거래자격 미확인으로 관찰 후보는 0개입니다. 자동 테스트 88개 통과. 생성 보고서와 종목·지수 CSV를 동일 회차로 자동 내보내고 HTTP 읽기·SHA-256 일치를 로컬 검증했습니다. 실전·계좌·외부 서버·ChatGPT 예약 연결과 실제 수익성 입증은 아직 미완료입니다. 자세한 상태는 [OPERATIONS.md](OPERATIONS.md) 및 `reports/operations_status.json`을 확인하세요.
+> GitHub 운영 연결(2026-10-10): 매일 06:17 KST에 KIS 모의 서버 전수 수집과 v2 보고서 생성을 실행하도록 설정했습니다. 키는 저장소 Secrets로 연결하고 코드·계좌자료에는 포함하지 않습니다. 최신 실행 상태는 [delivery/latest.json](delivery/latest.json), 원본 데이터와 보고서는 해당 Actions artifact에서 확인합니다. 기존 ChatGPT 08시 예약에 공급 지시문을 저장했으며 실제 다운로드·보고서 읽기는 별도 검증 대상입니다. 로컬 자동 테스트 90개 통과. 실전·계좌 연동과 독립적인 수익성 입증은 미완료입니다. 자세한 안내는 [GITHUB_OPERATIONS.md](GITHUB_OPERATIONS.md)를 확인하세요.
 
 # BankIS Market Intelligence v2.0 / Strategy-neutral intelligence and BankIS Scout
 
