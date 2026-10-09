@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "RUNNING",
+  "checked_at": "2026-10-10T00:24:10.196276+09:00",
+  "repository": "amandalmoon/bankis_scout",
+  "run_id": 37951422479,
+  "run_attempt": 1,
+  "run_url": "https://github.com/amandalmoon/bankis_scout/actions/runs/37951422479",
+  "artifact_id": null,
+  "artifact_name": "bankis-report-37951422479-1",
+  "artifact_requires_github_access": true,
+  "account_data_included": false
+}
