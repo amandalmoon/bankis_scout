@@ -2,7 +2,7 @@ name: KIS morning market briefing
 
 on:
   schedule:
-    - cron: '17 21 * * *' # 06:17 Asia/Seoul; collect before the existing 08:00 task
+    - cron: '17 15 * * *' # 00:17 Asia/Seoul; allow for observed scheduler delays before 08:00
   workflow_dispatch:
 
 permissions:

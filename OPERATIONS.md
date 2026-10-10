@@ -3,7 +3,7 @@
 ## GitHub 실행과 기존 ChatGPT 예약
 
 서버를 별도로 구매하지 않는 운영 경로를 설정했습니다.
-`amandalmoon/bankis_scout`의 GitHub Actions가 매일 06:17 KST에 모의 KIS 전수 수집을 시작합니다.
+`amandalmoon/bankis_scout`의 GitHub Actions에 매일 00:17 KST 모의 KIS 전수 수집을 예약했습니다.
 실행 결과는 로그인 권한이 필요한 Actions 첨부파일에 3일간 보관하고,
 `delivery/latest.json`에는 실행 상태·보고서 시각·첨부파일 식별자만 기록합니다.
 저장소 소스는 공개되어 있으며 계좌번호·키·로컬 원장은 소스에 포함하지 않습니다.
@@ -11,8 +11,10 @@ KIS 앱 키와 시크릿은 저장소 Secrets를 사용합니다.
 
 기존 ChatGPT `08시 시장정보·뱅키스 브리핑`의 반복 일정은 유지하고,
 당일 READY 보고서를 GitHub 연결 도구로 읽도록 지침을 저장했습니다.
+2026-10-10 08:02 KST 실제 예약에서 첫 클라우드 보고서를 읽은 결과를 확인했습니다.
+예약 결과에서 내려받은 ZIP과 GitHub 원본 ZIP 및 내부 6개 파일의 해시가 일치했습니다.
 설정 저장과 예약 실행의 성공은 구분합니다. 실제 실행·첨부파일 검증 결과는
-`reports/github_artifact_check.json`과 `reports/operations_status.json`을 확인하세요.
+`reports/github_artifact_check.json`, `reports/chatgpt_scheduled_check.json`, `reports/operations_status.json`을 확인하세요.
 실패·지연·오래된 보고서는 해당 상태를 표시하며 최신 보고서로 대체해 해석하지 않습니다.
 GitHub 예약은 지연될 수 있으므로 08:00 공급 완료를 보장하지 않습니다.
 캐시는 장기 성과 원장의 영구 보관소가 아니므로 독립 성과 검증에는 별도 보존이 필요합니다.

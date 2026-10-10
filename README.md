@@ -1,4 +1,4 @@
-> GitHub 운영 연결(2026-10-10): 매일 06:17 KST에 KIS 모의 서버 전수 수집과 v2 보고서 생성을 실행하도록 설정했습니다. 키는 저장소 Secrets로 연결하고 코드·계좌자료에는 포함하지 않습니다. 최신 실행 상태는 [delivery/latest.json](delivery/latest.json), 원본 데이터와 보고서는 해당 Actions artifact에서 확인합니다. 기존 ChatGPT 08시 예약에 공급 지시문을 저장했으며 실제 다운로드·보고서 읽기는 별도 검증 대상입니다. 로컬 자동 테스트 90개 통과. 실전·계좌 연동과 독립적인 수익성 입증은 미완료입니다. 자세한 안내는 [GITHUB_OPERATIONS.md](GITHUB_OPERATIONS.md)를 확인하세요.
+> GitHub 운영 연결(2026-10-10): 매일 00:17 KST에 KIS 모의 서버 전수 수집과 v2 보고서 생성을 예약했습니다. 키는 저장소 Secrets로 연결하며 계좌자료는 공급 파일에서 제외합니다. 첫 실행은 2,769종목·242,215행 수집에 성공했고, 기존 ChatGPT 08시 예약의 실제 보고서 읽기와 다운로드 ZIP의 해시 일치를 확인했습니다. 다음 자동 수집도 성공했으나 예약 지연이 관측되어 준비 시간을 앞당겼습니다. 최신 상태는 [delivery/latest.json](delivery/latest.json), 데이터와 보고서는 Actions artifact에서 확인합니다. 로컬·GitHub Linux 테스트 90개 통과. 실전·계좌 연동과 독립적인 수익성 입증은 미완료입니다. 자세한 안내는 [GITHUB_OPERATIONS.md](GITHUB_OPERATIONS.md)를 확인하세요.
 
 # BankIS Market Intelligence v2.0 / Strategy-neutral intelligence and BankIS Scout
 
