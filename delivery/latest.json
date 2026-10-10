@@ -1,13 +1,20 @@
 {
   "schema_version": 1,
-  "status": "RUNNING",
-  "checked_at": "2026-10-10T09:50:43.303105+09:00",
+  "status": "READY",
+  "checked_at": "2026-10-10T10:22:26.365483+09:00",
   "repository": "amandalmoon/bankis_scout",
   "run_id": 38010757055,
   "run_attempt": 1,
   "run_url": "https://github.com/amandalmoon/bankis_scout/actions/runs/38010757055",
-  "artifact_id": null,
+  "artifact_id": 11655425819,
   "artifact_name": "bankis-report-38010757055-1",
   "artifact_requires_github_access": true,
-  "account_data_included": false
+  "account_data_included": false,
+  "snapshot_id": "20261010T102151565549",
+  "generated_at": "2026-10-10T10:21:51.565549+09:00",
+  "collection_finished_at": "2026-10-10T10:21:51.451846+09:00",
+  "environment": "vps",
+  "collection_status": "COMPLETE",
+  "received_symbols": 2769,
+  "expected_symbols": 2769
 }
