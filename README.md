@@ -9,6 +9,44 @@
 - **Layer 1: Market Intelligence** (`intelligence.html` / `intelligence.json`). An evidence ledger that records new facts, measurable changes, truly pre-event expectations, risk, liquidity, market structure, counterevidence, publication/observation/ingestion timestamps, provenance disagreements and real source-access gaps. It does not rank BUY candidates or prescribe a strategy.
 - **Layer 2: BankIS Scout** (`preopen.html` / `intraday.html`). The previous momentum-scanning research module. It is conceptually separate and its scores remain unvalidated heuristics, never the output of Layer 1.
 
+## Separate EOD research shortlist (not a trading watchlist)
+
+A complete market collection can still produce zero strict WATCH stocks if the
+required contest eligibility file is empty. This is intentional for trading
+approval, but should not hide otherwise analyzable market observations.
+
+The authenticated daily artifact now includes research_shortlist.json and
+an explicitly separate section in briefing.md. The additional list is never
+an approved WATCH or a recommendation to place an order.
+
+- The existing engine, Settings, WATCH gate, prospective paper records,
+  strategy hash, and preopen/intraday execution rules are unchanged.
+- Research-only entries are selected from DATA_BLOCKED rows with only
+  missing/stale contest-eligibility reasons. Any additional data, turnover,
+  risk/disclosure or benchmark rejection still blocks research publication.
+- A complete, non-synthetic KRX daily feed, enough aligned price history,
+  continuous index sessions, last-day turnover >= KRW 30bn, 20-day median
+  turnover >= KRW 10bn, positive 5-session market-relative movement,
+  EOD volume >= 1.2x the trailing 20-session median, and closing location >= 0.45
+  are required. These are display thresholds, not statistically validated alpha.
+- At most five entries are sorted by 5-session relative strength, then EOD
+  relative volume and trading value. Their day, KIS venue/source, benchmark
+  deviation, turnover, original DATA_BLOCKED state and missing contest
+  eligibility remain visible.
+- If data are synthetic, incomplete, invalid, not source-attributed to
+  KIS:KRX:UNADJUSTED, or stale/missing a market session, the research list
+  stays empty. Historical prices are not current intraday signals.
+- News/catalysts, DART/KIND warnings, new shares/convertible bonds, execution
+  costs, KRX/NXT scope and contest permissions still require independent checks.
+  Real trading authorization and actual trade returns are not inferred.
+- The strict WATCH=0 and NO_TESTABLE_SELECTION may remain until contest
+  permissions are independently documented. Do not silently promote this
+  observational list into the frozen performance evaluation.
+
+The authenticated artifact includes an updated manifest.json with file
+size/SHA-256 for the additional JSON. Source-file hashes establish file
+identity, not independent proof of the underlying price content.
+
 ## Quick start, Windows PowerShell
 
 Unzip and open a PowerShell terminal in this directory (`project`). Install Python 3.10+ first.
