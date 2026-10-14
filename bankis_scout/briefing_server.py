@@ -19,6 +19,7 @@ from .feed import read_verified_artifact
 ALLOWED = {"briefing.md": "text/plain; charset=utf-8", "status.json": "application/json; charset=utf-8",
            "intelligence.html": "text/html; charset=utf-8", "preopen.html": "text/html; charset=utf-8",
            "manifest.json": "application/json; charset=utf-8",
+           "research_shortlist.json": "application/json; charset=utf-8",
            "market_daily.csv": "text/csv; charset=utf-8", "index_daily.csv": "text/csv; charset=utf-8"}
 
 
