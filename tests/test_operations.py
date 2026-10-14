@@ -247,7 +247,7 @@ def test_feed_verifier_reads_all_files_but_does_not_claim_chatgpt_connection(rep
     url, token, _ = report_server
     result = verify(url, token, local=True)
     assert result["status"] == "LOCAL_HTTP_VERIFIED"
-    assert len(result["verified_files"]) == 6
+    assert len(result["verified_files"]) == 7
     assert result["chatgpt_scheduled_read"] == "NOT_VERIFIED"
     assert result["market_daily_rows"] == 1
 

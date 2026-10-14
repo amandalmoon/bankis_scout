@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 
 from .briefing_server import handler_class
 from .collect_all import atomic_json
-from .feed import REPORT_FILES, DATA_FILES
+from .feed import REPORT_FILES, DATA_FILES, RESEARCH_FILES
 from .runtime import project_root
 from .settings import KST
 
@@ -43,7 +43,7 @@ def verify(base_url, token, *, local=False):
         import re
         if not re.fullmatch(r"[0-9]{8}T[0-9]{12}", snapshot):
             raise ValueError("Invalid snapshot")
-        required = set(REPORT_FILES) | set(DATA_FILES)
+        required = set(REPORT_FILES) | set(RESEARCH_FILES) | set(DATA_FILES)
         if set(manifest["files"]) != required:
             raise ValueError("Unexpected export files")
         verified = []
