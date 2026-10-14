@@ -7,10 +7,11 @@ from pathlib import Path
 
 from .data import DAILY_FIELDS, INDEX_FIELDS
 
-REPORT_FILES = ("briefing.md", "intelligence.html", "preopen.html", "status.json", "research_shortlist.json")
+REPORT_FILES = ("briefing.md", "intelligence.html", "preopen.html", "status.json")
+RESEARCH_FILES = ("research_shortlist.json",)
 DATA_FILES = {"market_daily.csv": ("daily", DAILY_FIELDS),
               "index_daily.csv": ("index", INDEX_FIELDS)}
-FEED_FILES = frozenset((*REPORT_FILES, *DATA_FILES, "manifest.json"))
+FEED_FILES = frozenset((*REPORT_FILES, *RESEARCH_FILES, *DATA_FILES, "manifest.json"))
 
 
 def write_feed(export, bundle, status):
@@ -56,9 +57,9 @@ def write_feed(export, bundle, status):
             f"일별 거래대금 {item['last_turnover_krw']/1e8:,.1f}억원. "
             "대회자격·공시·호가 미확인. 주문 근거가 아님.")
     marker = "\n## 성과 및 연결 상태"
-    if marker in markdown:
+    if marker in markdown and research["status"] in ("OBSERVATIONS_AVAILABLE", "NO_RESEARCH_SIGNAL"):
         markdown = markdown.replace(marker, "\n" + "\n".join(note) + "\n" + marker, 1)
-    else:
+    elif research["status"] in ("OBSERVATIONS_AVAILABLE", "NO_RESEARCH_SIGNAL"):
         markdown += "\n\n" + "\n".join(note) + "\n"
     (export / "briefing.md").write_text(markdown, encoding="utf-8")
     try:
@@ -72,7 +73,7 @@ def write_feed(export, bundle, status):
         pass
 
     files = {}
-    for name in (*REPORT_FILES, *DATA_FILES):
+    for name in (*REPORT_FILES, *RESEARCH_FILES, *DATA_FILES):
         payload = (export / name).read_bytes()
         files[name] = {"bytes": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
     manifest = {"schema_version": 1, "snapshot_id": export.name, **status,
